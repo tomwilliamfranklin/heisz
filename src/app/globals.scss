@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #061425;
+  --accent: #f4d35e;
+  --accent2: #ef4444;
+  --accent3: #0ea5e9;
+  --background: #303a44;
+
+  --primaryDark: #191919;
+  --highlight: #e80000;
+  --whiteColor: #f7f7ff;
+  --blackColor: #000814;
+  --greyColor: #c5c5c5;
+  --transparent: transparent;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --primary: #061425;
+    --accent: #f4d35e;
+    --accent2: #ef4444;
+    --accent3: #0ea5e9;
+    --background: #303a44;
+
+    --primaryDark: #191919;
+    --highlight: #e80000;
+    --whiteColor: #f7f7ff;
+    --blackColor: #000814;
+    --greyColor: #c5c5c5;
+    --transparent: transparent;
+  }
+}
+::selection {
+  background: var(--accent);
+}
+
+@layer components {
+  body {
+    background-color: #1e1b19;
+    @apply text-whiteColor;
+  }
+
+  .site-core {
+    position: relative;
+    overflow: hidden;
+    @apply w-screen;
+  }
+
+  .site-content {
+    position: relative;
+    z-index: 10;
+    transition: opacity 0.3s ease-in;
+  }
+
+  .wood-texture {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    top: 0;
+    left: 0;
+    mask-image: radial-gradient(
+      circle at 75%,
+      rgba(0, 0, 0, 0.1) 5%,
+      transparent
+    );
+  }
+
+  .instrument {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 1200px;
+    height: auto;
+    filter: drop-shadow(40px 40px 15px rgba(0, 0, 0, 0.8));
+  }
+
+  .instrument-header {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    font-size: 405pt;
+    letter-spacing: 0pt;
+    margin-top: 20px;
+    opacity: 0.1;
+  }
+
+  .instrument-primary-tooltip {
+    position: absolute;
+    max-width: 600px;
+    bottom: 0px;
+    font-weight: bold;
+
+    & > h4 {
+      display: block;
+      margin-top: 40px;
+      @apply text-secondary;
+    }
+  }
+
+  h1 {
+    word-break: break-all;
+    letter-spacing: 5pt;
+    @apply text-4xl sm:text-4xl md:text-6xl lg:text-9xl;
+  }
+
+  h2 {
+    @apply text-4xl md:text-6xl drop-shadow-md;
+  }
+
+  h3 {
+    @apply text-xl md:text-4xl drop-shadow-md;
+  }
+
+  h4 {
+    @apply text-2xl drop-shadow-md;
+  }
+
+  h5 {
+    @apply text-xl drop-shadow-md;
+  }
+
+  p {
+    @apply text-base;
+  }
+
+  a {
+    @apply text-lg;
+  }
+
+  label {
+    @apply text-xl font-bold;
+  }
+
+  button {
+    @apply text-lg md:text-xl font-bold uppercase bg-accent w-fit p-[1rem] rounded-lg;
+  }
+}
