@@ -58,13 +58,15 @@
   }
 
   .wood-texture {
-    position: fixed;
+    position: absolute;
+    background-image: url("/woodtexture2.jpg");
+    background-size: contain;
     height: 100%;
     width: 100%;
-    object-fit: cover;
     object-position: top center;
     top: 0;
     left: 0;
+    background-repeat: repeat-y;
     mask-image: radial-gradient(
       circle at 75%,
       rgba(0, 0, 0, 0.2) 5%,
@@ -73,18 +75,19 @@
   }
 
   .instrument {
-    position: absolute;
-    left: 50%;
+    position: relative;
+    /* left: 50%;
     top: 50%;
-    transform: translate(-50%, -50%);
-    width: 1050px;
-    height: auto;
+    transform: translate(-50%, -50%); */
+    width: auto;
+    height: 400px;
     filter: drop-shadow(40px 40px 15px rgba(0, 0, 0, 0.8));
-    transition: transform 0.2s ease-in;
+    //transition: transform 0.2s ease-in;
     cursor: pointer;
-    &:hover {
+    /* &:hover {
       transform: rotateY(10deg) rotateX(5deg) translate(-50%, -50%);
-    }
+    } */
+    object-fit: contain;
   }
 
   .instrument-header {
@@ -107,6 +110,16 @@
       margin-top: 2rem;
       @apply text-secondary;
     }
+  }
+
+  .instrument-secondary-tooltip {
+    position: absolute;
+    max-width: 600px;
+    bottom: 0px;
+    right: 0px;
+    font-weight: bold;
+
+    @apply text-secondary;
   }
 
   h1 {

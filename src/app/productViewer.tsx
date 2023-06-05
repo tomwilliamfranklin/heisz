@@ -6,29 +6,35 @@ export default function ProductViewer() {
   return (
     <div className="relative w-full h-full">
       <div className="w-full h-[600px] max-w-[1300px] m-auto relative mb-[3rem]">
-        <div className="relative">
-          <h1 className="font-Gazzetta instrument-header">Gatekeeper</h1>
-          <div className="absolute left-0 top-[50%] bg-opacity-[0.7] h-[50px] w-[50px] translate-y-[-50%] bg-background rounded-full flex justify-center items-center">
+        <div className="relative flex justify-center">
+          {/* <h1 className="font-Gazzetta instrument-header">Gatekeeper</h1> */}
+          <Image
+            className="instrument"
+            alt="guitar placeholder"
+            width={1536}
+            height={726}
+            src="/guitar-placeholder1.png"
+          />
+          <div className="absolute left-0 top-[50%] bg-opacity-[0.7] h-[50px] w-[50px] translate-y-[-50%] bg-secondary rounded-full flex justify-center items-center">
             <Image
               className=" rotate-[-90deg] w-[20px] mr-[5px] fill-whiteColor invert"
               src={arrow}
               alt="arrowleft"
             />
           </div>
-          <div className="absolute right-0 top-[50%] h-[50px] w-[50px] translate-y-[-50%] bg-background rounded-full flex justify-center items-center bg-opacity-[0.7]">
+          <div className="absolute right-0 top-[50%] h-[50px] w-[50px] translate-y-[-50%] bg-secondary rounded-full flex justify-center items-center bg-opacity-[0.7]">
             <Image
               className=" rotate-[90deg] w-[20px] mr-[-5px] invert"
               src={arrow}
               alt="arrowleft"
             />
           </div>
-          <Image
-            alt="guitar placeholder"
-            width={1536}
-            height={726}
-            src="/guitar-placeholder1.png"
-            className="instrument"
-          />
+          <h2 className="text-accent font-verveine font-bold absolute right-[42%] top-[20%] rotate-[10deg]">
+            NEW!
+          </h2>
+          <h2 className="text-accent font-verveine font-bold absolute right-[30%] bottom-[20%] rotate-[0deg]">
+            Gatekeeper
+          </h2>
         </div>
 
         <h2 className="instrument-primary-tooltip">
@@ -38,9 +44,14 @@ export default function ProductViewer() {
             eiusmod tempor incididunt
           </h4>
         </h2>
-        <h2 className="text-accent font-verveine font-bold absolute right-[35rem] top-[7rem] rotate-[10deg]">
-          NEW!
-        </h2>
+
+        <h5 className="instrument-secondary-tooltip">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur
+          adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor
+          sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+          incididunt.
+        </h5>
       </div>
       <div className="flex flex-col lg:flex-row max-w-[1300px] ml-auto mr-auto gap-10">
         <div className="flex flex-col flex-1 gap-y-10">

@@ -24,7 +24,7 @@ export default function Navbar() {
             <ul className="h-full flex items-center gap-7 relative">
               <li
                 className={classNames("relative", {
-                  "text-secondary font-bold": pathname === "/",
+                  "text-accent font-bold": pathname === "/",
                 })}
               >
                 <Link className="link" href="/">
@@ -33,7 +33,7 @@ export default function Navbar() {
               </li>
               <li
                 className={classNames("relative", {
-                  "text-secondary font-bold": pathname === "/about",
+                  "text-accent font-bold": pathname === "/about",
                 })}
               >
                 <Link className="link" href="/about">
@@ -42,7 +42,7 @@ export default function Navbar() {
               </li>
               <li
                 className={classNames("relative", {
-                  "text-secondary font-bold": pathname === "/content",
+                  "text-accent font-bold": pathname === "/content",
                 })}
               >
                 <Link className="link" href="/content">

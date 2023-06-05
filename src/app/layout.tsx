@@ -48,13 +48,6 @@ export default function RootLayout({
             ></path>
           </clipPath>
         </svg>
-        <Image
-          alt="wood texture"
-          src="/woodtexture2.jpg"
-          width={1000}
-          height={1000}
-          className="wood-texture"
-        />
         <Navbar />
         {children}
         <Footer />
