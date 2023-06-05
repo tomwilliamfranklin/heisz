@@ -7,13 +7,17 @@ module.exports = {
   ],
   theme: {
     colors: {
-      primary: "#061425",
+      primary: "#b88b50",
       secondary: "#957A68",
-      background: "#654321",
-      accent: "#4e3727",
+      background: "#b88b50",
+      accent: "#3F00FF",
       accent1: "#f4d45e",
       accent2: "#ef4444",
       accent3: "#0ea5e9",
+      // 4169E1 Royal Blue
+      // 3F00FF Vibrant Indigo
+      // brown 4e3727
+      // color of guitar body D8B06E
 
       primaryDark: "#191919",
       highlight: "#e80000",
@@ -24,9 +28,14 @@ module.exports = {
       transparent: "transparent",
       boxShadow: "rgba(0,0,0,0.4)",
     },
+    fontFamily: {
+      mono: ["trade-gothic-next", "sans-serif"],
+    },
     extend: {
       fontFamily: {
+        "trade-gothic": ["trade-gothic-next", "sans-serif"],
         Gazzetta: ["gazzetta-variable", "sans-serif"],
+        verveine: ["verveine", "sans-serif"],
       },
     },
   },

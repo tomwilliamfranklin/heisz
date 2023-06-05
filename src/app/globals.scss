@@ -34,18 +34,20 @@
   }
 }
 ::selection {
-  background: var(--accent);
+  @apply bg-accent;
 }
 
 @layer components {
   body {
     background-color: #1e1b19;
+    font-family: "trade-gothic-next" !important; // TODO figure out fonts properly
     @apply text-whiteColor;
+    overflow-x: hidden;
   }
 
   .site-core {
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
     @apply w-screen;
   }
 
@@ -60,11 +62,12 @@
     height: 100%;
     width: 100%;
     object-fit: cover;
+    object-position: top center;
     top: 0;
     left: 0;
     mask-image: radial-gradient(
       circle at 75%,
-      rgba(0, 0, 0, 0.1) 5%,
+      rgba(0, 0, 0, 0.2) 5%,
       transparent
     );
   }
@@ -74,21 +77,23 @@
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 1200px;
+    width: 1050px;
     height: auto;
     filter: drop-shadow(40px 40px 15px rgba(0, 0, 0, 0.8));
+    transition: transform 0.2s ease-in;
+    cursor: pointer;
+    &:hover {
+      transform: rotateY(10deg) rotateX(5deg) translate(-50%, -50%);
+    }
   }
 
   .instrument-header {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
     white-space: nowrap;
-    font-size: 405pt;
+    font-size: 400pt;
     letter-spacing: 0pt;
     margin-top: 20px;
     opacity: 0.1;
+    text-align: center;
   }
 
   .instrument-primary-tooltip {
@@ -99,7 +104,7 @@
 
     & > h4 {
       display: block;
-      margin-top: 40px;
+      margin-top: 2rem;
       @apply text-secondary;
     }
   }
@@ -131,7 +136,7 @@
   }
 
   a {
-    @apply text-lg;
+    @apply text-lg lg:text-3xl;
   }
 
   label {
