@@ -77,18 +77,27 @@
 
   .instrument {
     position: relative;
-    /* left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%); */
     width: auto;
     height: 400px;
     filter: drop-shadow(40px 40px 15px rgba(0, 0, 0, 0.8));
-    //transition: transform 0.2s ease-in;
+
     cursor: pointer;
-    /* &:hover {
-      transform: rotateY(10deg) rotateX(5deg) translate(-50%, -50%);
-    } */
+
     object-fit: contain;
+    transition: all 0.2s;
+    right: 0%;
+    &.leftAnimate,
+    &.endLeftAnimate {
+      right: 50%;
+      transform: rotateY(70deg);
+      opacity: 0;
+    }
+    &.rightAnimate,
+    &.endRightAnimate {
+      right: -50%;
+      transform: rotateY(-70deg);
+      opacity: 0;
+    }
   }
 
   .instrument-header {
@@ -125,10 +134,27 @@
     @apply text-accent font-verveine font-bold;
     /* text-shadow: -1px -1px 0 var(--whiteColor), 1px -1px 0 var(--whiteColor),
       -1px 1px 0 var(--whiteColor), 1px 1px 0 var(--whiteColor); */
+    transition: opacity 0.2s;
+    &.draw {
+      opacity: 1;
+    }
   }
 
   .button-alt {
-    @apply absolute top-[50%] bg-opacity-[0.7] h-[50px] w-[50px] translate-y-[-50%] rounded-full flex justify-center items-center;
+    @apply absolute bg-transparent top-[50%] bg-opacity-[0.7] h-[100px] w-[75px] translate-y-[-50%] rounded-full flex justify-center items-center;
+    transition: background 0.2s;
+    &:hover {
+      @apply bg-accent;
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    letter-spacing: 1.75pt;
   }
 
   h1 {
@@ -167,5 +193,9 @@
 
   button {
     @apply text-lg md:text-xl font-bold uppercase bg-accent w-fit p-[1rem] rounded-lg;
+
+    &.alt {
+      @apply bg-transparent border-4 border-accent;
+    }
   }
 }

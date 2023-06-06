@@ -10,7 +10,7 @@ export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
   return (
-    <header className="sticky top-0 left-0 z-40 w-screen overflow-hidden">
+    <header className="fixed top-0 left-0 z-40 w-screen overflow-hidden">
       <div className="flex items-start justify-start pt-10">
         <Image
           className="h-auto ml-[50px]"

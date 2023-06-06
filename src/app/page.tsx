@@ -6,7 +6,7 @@ export default function Home() {
     <main className="site-core">
       <div className="wood-texture" />
       <div className="site-content">
-        <section className="relative flex justify-center items-center pb-20">
+        <section className="relative h-screen flex justify-center items-center pb-20">
           <ProductViewer />
         </section>
         <section className="flex ml-auto mr-auto h-[200px]  justify-center items-center">
