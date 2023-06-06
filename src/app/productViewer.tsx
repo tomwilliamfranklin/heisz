@@ -166,7 +166,7 @@ export default function ProductViewer() {
             </div>
 
             <button className="mt-10 alt items-center flex">
-              How it's made{" "}
+              How it's made
               <div className="inline-block ml-2 p-2 rounded-full">
                 <Image
                   className="rotate-[180deg]  w-[30px] mr-[-5px] invert"
