@@ -11,9 +11,9 @@ export default function Navbar() {
   const pathname = usePathname();
   return (
     <header className="sticky top-0 left-0 z-40 w-screen overflow-hidden">
-      <div className="flex items-center justify-start pt-10">
+      <div className="flex items-start justify-start pt-10">
         <Image
-          className="h-auto ml-[40px]"
+          className="h-auto ml-[50px]"
           src="/logo.png"
           width={250}
           height={1}
@@ -21,10 +21,10 @@ export default function Navbar() {
         />
         <div className="h-[60px] w-[800px] ml-auto mr-auto">
           <nav className="block pr-20 pl-20 h-full">
-            <ul className="h-full flex items-center gap-7 relative">
+            <ul className="h-full flex items-start gap-7 relative">
               <li
-                className={classNames("relative", {
-                  "text-accent font-bold": pathname === "/",
+                className={classNames("relative text-secondary", {
+                  "text-whiteColor font-bold": pathname === "/",
                 })}
               >
                 <Link className="link" href="/">
@@ -32,8 +32,8 @@ export default function Navbar() {
                 </Link>
               </li>
               <li
-                className={classNames("relative", {
-                  "text-accent font-bold": pathname === "/about",
+                className={classNames("relative text-secondary", {
+                  "text-whiteColor font-bold": pathname === "/about",
                 })}
               >
                 <Link className="link" href="/about">
@@ -41,8 +41,8 @@ export default function Navbar() {
                 </Link>
               </li>
               <li
-                className={classNames("relative", {
-                  "text-accent font-bold": pathname === "/content",
+                className={classNames("relative text-secondary", {
+                  "text-whiteColor font-bold": pathname === "/content",
                 })}
               >
                 <Link className="link" href="/content">

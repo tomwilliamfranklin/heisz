@@ -7,24 +7,20 @@ module.exports = {
   ],
   theme: {
     colors: {
-      primary: "#b88b50",
-      secondary: "#957A68",
+      primary: "var(--primary)",
+      secondary: "var(--secondary)",
       background: "#b88b50",
-      accent: "#3F00FF",
-      accent1: "#f4d45e",
-      accent2: "#ef4444",
-      accent3: "#0ea5e9",
+      accent: "var(--accent)",
       // 4169E1 Royal Blue
       // 3F00FF Vibrant Indigo
       // brown 4e3727
       // color of guitar body D8B06E
 
-      primaryDark: "#191919",
-      highlight: "#e80000",
-      whiteColor: "rgba(231, 231, 231, 1)",
+      highlight: "var(--highlight)",
+      whiteColor: "var(--whiteColor)",
       whiteColorTran: "rgba(231, 231, 231, 0.9)",
       blackColor: "#000814",
-      greyColor: "#535353",
+      greyColor: "var(--greyColor)",
       transparent: "transparent",
       boxShadow: "rgba(0,0,0,0.4)",
     },

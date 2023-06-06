@@ -3,24 +3,24 @@
 @tailwind utilities;
 
 :root {
-  --primary: #061425;
-  --accent: #f4d35e;
-  --accent2: #ef4444;
-  --accent3: #0ea5e9;
+  --primary: #b88b50;
+  --secondary: #957a68;
   --background: #303a44;
-
+  --accent: #3f00ff;
+  --highlight: #3f00ff;
   --primaryDark: #191919;
   --highlight: #e80000;
-  --whiteColor: #f7f7ff;
+  --whiteColor: rgba(231, 231, 231, 1);
   --blackColor: #000814;
-  --greyColor: #c5c5c5;
+  --greyColor: #99938e;
   --transparent: transparent;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --primary: #061425;
-    --accent: #f4d35e;
+    --secondary: #957a68;
+    --accent: #3f00ff;
     --accent2: #ef4444;
     --accent3: #0ea5e9;
     --background: #303a44;
@@ -29,7 +29,7 @@
     --highlight: #e80000;
     --whiteColor: #f7f7ff;
     --blackColor: #000814;
-    --greyColor: #c5c5c5;
+    --greyColor: #99938e;
     --transparent: transparent;
   }
 }
@@ -55,6 +55,7 @@
     position: relative;
     z-index: 10;
     transition: opacity 0.3s ease-in;
+    padding: 40px;
   }
 
   .wood-texture {
@@ -100,26 +101,34 @@
   }
 
   .instrument-primary-tooltip {
-    position: absolute;
+    position: relative;
     max-width: 600px;
     bottom: 0px;
     font-weight: bold;
 
     & > h4 {
-      display: block;
-      margin-top: 2rem;
       @apply text-secondary;
     }
   }
 
   .instrument-secondary-tooltip {
-    position: absolute;
+    position: relative;
     max-width: 600px;
     bottom: 0px;
     right: 0px;
     font-weight: bold;
 
     @apply text-secondary;
+  }
+
+  .highlighter-outline {
+    @apply text-accent font-verveine font-bold;
+    /* text-shadow: -1px -1px 0 var(--whiteColor), 1px -1px 0 var(--whiteColor),
+      -1px 1px 0 var(--whiteColor), 1px 1px 0 var(--whiteColor); */
+  }
+
+  .button-alt {
+    @apply absolute top-[50%] bg-opacity-[0.7] h-[50px] w-[50px] translate-y-[-50%] rounded-full flex justify-center items-center;
   }
 
   h1 {

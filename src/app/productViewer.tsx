@@ -5,8 +5,8 @@ import arrow from "../../public/arrow.svg";
 export default function ProductViewer() {
   return (
     <div className="relative w-full h-full">
-      <div className="w-full h-[600px] max-w-[1300px] m-auto relative mb-[3rem]">
-        <div className="relative flex justify-center">
+      <div className="w-full max-w-[1500px] m-auto relative">
+        <div className="relative flex justify-center mt-10 mb-20">
           {/* <h1 className="font-Gazzetta instrument-header">Gatekeeper</h1> */}
           <Image
             className="instrument"
@@ -15,46 +15,51 @@ export default function ProductViewer() {
             height={726}
             src="/guitar-placeholder1.png"
           />
-          <div className="absolute left-0 top-[50%] bg-opacity-[0.7] h-[50px] w-[50px] translate-y-[-50%] bg-secondary rounded-full flex justify-center items-center">
+          <div className="button-alt left-0">
             <Image
               className=" rotate-[-90deg] w-[20px] mr-[5px] fill-whiteColor invert"
               src={arrow}
               alt="arrowleft"
             />
           </div>
-          <div className="absolute right-0 top-[50%] h-[50px] w-[50px] translate-y-[-50%] bg-secondary rounded-full flex justify-center items-center bg-opacity-[0.7]">
+          <div className="button-alt right-0">
             <Image
               className=" rotate-[90deg] w-[20px] mr-[-5px] invert"
               src={arrow}
               alt="arrowleft"
             />
           </div>
-          <h2 className="text-accent font-verveine font-bold absolute right-[42%] top-[20%] rotate-[10deg]">
+          <h2 className="highlighter-outline absolute right-[42%] top-[20%] rotate-[10deg]">
             NEW!
           </h2>
-          <h2 className="text-accent font-verveine font-bold absolute right-[30%] bottom-[20%] rotate-[0deg]">
+          <h2 className="highlighter-outline absolute right-[30%] bottom-[20%] rotate-[0deg]">
             Gatekeeper
           </h2>
         </div>
+        <div className="flex justify-between gap-10 flex-wrap">
+          <div className="instrument-primary-tooltip flex flex-col max-w-xl flex-[3] min-w-[400px]">
+            <h2>24 fret guitar</h2>
+            <h4 className="mt-5">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt
+            </h4>
+            <button className="mt-10">ORDER NOW</button>
+          </div>
 
-        <h2 className="instrument-primary-tooltip">
-          24 fret guitar
-          <h4>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt
-          </h4>
-        </h2>
-
-        <h5 className="instrument-secondary-tooltip">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt. Lorem ipsum dolor sit amet, consectetur
-          adipiscing elit, sed do eiusmod tempor incididunt. Lorem ipsum dolor
-          sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-          incididunt.
-        </h5>
+          <h5 className="instrument-secondary-tooltip flex-1 min-w-[300px] max-w-[400px] text-greyColor xl:top-[-50px]">
+            Duis aute irure dolor in reprehenderit in voluptate velit esse
+            cillum dolore eu fugiat nulla pariatur.
+          </h5>
+          <h5 className="instrument-secondary-tooltip flex-1 min-w-[300px] max-w-[400px] text-greyColor xl:top-[-150px]">
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+            nisi ut aliquip ex ea commodo consequat. Excepteur sint occaecat
+            cupidatat non proident, sunt in culpa qui officia deserunt mollit
+            anim id est laborum.
+          </h5>
+        </div>
       </div>
-      <div className="flex flex-col lg:flex-row max-w-[1300px] ml-auto mr-auto gap-10">
-        <div className="flex flex-col flex-1 gap-y-10">
+      <div className="flex flex-col max-w-[1500px] ml-auto mr-auto gap-10 mt-10 lg:flex-row">
+        <div className="flex flex-col gap-y-10 xl:flex-[2]">
           {/* <div className="flex flex-col">
             <label className=" text-secondary">Designed</label>
             <label>Charles Farmiloe</label>
@@ -63,9 +68,8 @@ export default function ProductViewer() {
             <label className=" text-secondary">Frets</label>
             <label>24</label>
           </div> */}
-          <button>ORDER NOW</button>
         </div>
-        <div className="images flex justify-end gap-[40px] flex-[3]">
+        <div className="images flex justify-end gap-[40px] flex-[3] xl:mt-[-150px]">
           <div className="flex flex-col gap-5 flex-1 uppercase font-bold">
             <Image
               alt="guitar placeholder"
