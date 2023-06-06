@@ -10,47 +10,53 @@ export default function Navbar() {
   const router = useRouter();
   const pathname = usePathname();
   return (
-    <header className="fixed top-0 left-0 z-40 w-screen overflow-hidden">
+    <header className="fixed top-0 left-0 z-40 w-screen ">
       <div className="flex items-start justify-start pt-10">
-        <Image
-          className="h-auto ml-[50px]"
-          src="/logo.png"
-          width={250}
-          height={1}
-          alt="Farmiloe"
-        />
-        <div className="h-[60px] w-[800px] ml-auto mr-auto">
-          <nav className="block pr-20 pl-20 h-full">
-            <ul className="h-full flex items-start gap-7 relative">
-              <li
-                className={classNames("relative text-secondary", {
-                  "text-whiteColor font-bold": pathname === "/",
-                })}
-              >
-                <Link className="link" href="/">
-                  Home
-                </Link>
-              </li>
-              <li
-                className={classNames("relative text-secondary", {
-                  "text-whiteColor font-bold": pathname === "/about",
-                })}
-              >
-                <Link className="link" href="/about">
-                  About
-                </Link>
-              </li>
-              <li
-                className={classNames("relative text-secondary", {
-                  "text-whiteColor font-bold": pathname === "/content",
-                })}
-              >
-                <Link className="link" href="/content">
-                  Purchase
-                </Link>
-              </li>
-            </ul>
-          </nav>
+        <div className="absolute  left-0 h-[200px] ml-[50px]">
+          <Image
+            className="h-auto w-[300px] p-[25px]"
+            src="/logo.png"
+            width={250}
+            height={1}
+            alt="Farmiloe"
+          />
+        </div>
+        <div className="h-[100px] w-screen flex justify-center">
+          <div className="cutout-back w-fit h-full">
+            <div className="cutout-1 h-full">
+              <nav className="block pr-20 pl-20 h-full">
+                <ul className="h-full flex items-center gap-7 relative">
+                  <li
+                    className={classNames("relative text-secondary", {
+                      "text-whiteColor font-bold": pathname === "/",
+                    })}
+                  >
+                    <Link className="link" href="/">
+                      Home
+                    </Link>
+                  </li>
+                  <li
+                    className={classNames("relative text-secondary", {
+                      "text-whiteColor font-bold": pathname === "/about",
+                    })}
+                  >
+                    <Link className="link" href="/about">
+                      About
+                    </Link>
+                  </li>
+                  <li
+                    className={classNames("relative text-secondary", {
+                      "text-whiteColor font-bold": pathname === "/content",
+                    })}
+                  >
+                    <Link className="link" href="/content">
+                      Purchase
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
+            </div>
+          </div>
         </div>
       </div>
     </header>

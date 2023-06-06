@@ -33,21 +33,24 @@ export default function RootLayout({
       <link rel="stylesheet" href="https://use.typekit.net/vex5gtt.css"></link>
       <link rel="stylesheet" href="https://use.typekit.net/vex5gtt.css"></link>
       <body className={classNames(inter.className, "overflow-x-h")}>
-        <svg className="hidden" preserveAspectRatio="none">
-          <clipPath id="section-top" clipPathUnits="objectBoundingBox">
-            <path
-              transform="scale(0.00145 0.00655)"
-              d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-            ></path>
-          </clipPath>
+        <div className="svgs">
+          <svg preserveAspectRatio="none">
+            <clipPath id="section-top" clipPathUnits="objectBoundingBox">
+              <path
+                transform="scale(0.001,0.008)"
+                d="M598.97 114.72L0 0 0 120 1200 120 1200 0 598.97 114.72z"
+              ></path>
+            </clipPath>
 
-          <clipPath id="section-bottom" clipPathUnits="objectBoundingBox">
-            <path
-              transform="scale(0.0009 0.00555)"
-              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-            ></path>
-          </clipPath>
-        </svg>
+            <clipPath id="section-bottom" clipPathUnits="objectBoundingBox">
+              <path
+                transform="scale(0.0009 0.00555)"
+                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+              ></path>
+            </clipPath>
+          </svg>
+        </div>
+
         <Navbar />
         {children}
         <Footer />
