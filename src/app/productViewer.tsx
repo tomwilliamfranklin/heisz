@@ -39,6 +39,11 @@ export default function ProductViewer() {
       name: "Gatesmasher",
       tags: [{ label: "GATESMASHER", posX: 20, posY: 70, rotate: 0 }],
     },
+    {
+      image: "guitar-placeholder5.png",
+      name: "Gatesmasher",
+      tags: [{ label: "COMING SOON", posX: 20, posY: 70, rotate: 0 }],
+    },
   ];
 
   const [currentProduct, setCurrentProduct] = useState(0);
