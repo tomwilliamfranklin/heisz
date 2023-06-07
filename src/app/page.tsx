@@ -114,10 +114,7 @@ export default function Home() {
                     Our dedication extends to the final stages, where we
                     skillfully apply impeccable finishes, harmoniously marrying
                     aesthetics and durability. With meticulous precision, we
-                    assemble the guitar, paying utmost attention to alignment,
-                    functionality, and balance, resulting in an instrument that
-                    is not just visually captivating, but an embodiment of
-                    flawless construction.
+                    assemble the guitar, paying utmost attention to alignment.
                   </h4>
                 </div>
               </div>
@@ -141,10 +138,7 @@ export default function Home() {
                     subject each guitar to rigorous testing. We meticulously
                     assess every nuance of sound quality, playability, and
                     responsiveness, ensuring that the instrument surpasses all
-                    expectations. Finally, with pride and satisfaction, we
-                    deliver the finished masterpiece, knowing that our
-                    dedication and passion have been faithfully poured into
-                    every aspect of its creation.
+                    expectations.
                   </h4>
                 </div>
               </div>
