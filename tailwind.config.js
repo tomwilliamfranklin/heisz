@@ -20,6 +20,7 @@ module.exports = {
       whiteColor: "var(--whiteColor)",
       whiteColorTran: "rgba(231, 231, 231, 0.9)",
       blackColor: "var(--blackColor)",
+      blackColorSecondary: "var(--blackColorSecondary)",
       greyColor: "var(--greyColor)",
       transparent: "transparent",
       boxShadow: "rgba(0,0,0,0.4)",

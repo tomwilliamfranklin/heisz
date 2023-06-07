@@ -53,7 +53,6 @@ export default function ProductViewer() {
   const [endRightAnimate, setEndRightAnimate] = useState(false);
 
   const onAnimateEnd = (e: any) => {
-    console.log(e.currentTarget.className);
     if (e.propertyName === "transform") {
       if (e.currentTarget.className.includes("leftAnimate")) {
         setLeftAnimate(false);
@@ -93,7 +92,7 @@ export default function ProductViewer() {
   };
 
   useEffect(() => {
-    scrollToNext();
+    // scrollToNext();
   }, []);
 
   const scrollToNext = () => {
@@ -196,7 +195,7 @@ export default function ProductViewer() {
                 alt="guitar placeholder"
                 width={800}
                 height={400}
-                src="http://davefarmiloe.com/wp-content/uploads/2022/08/T42-10.jpg"
+                src="http://davefarmiloe.com/wp-content/uploads/2023/01/IMG-20230130-WA0007.jpg"
                 className="h-[10rem] object-cover rounded-xl"
               />
               <h5>A bespoke design from Farmiloe</h5>
