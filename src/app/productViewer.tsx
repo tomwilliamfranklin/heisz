@@ -108,7 +108,7 @@ export default function ProductViewer() {
   return (
     <div className="relative w-full h-full flex flex-col">
       <div className="w-full flex flex-col max-w-[1500px] m-auto relative flex-1">
-        <div className="relative flex flex-1 items-center justify-center mt-40 mb-20">
+        <div className="relative flex flex-1 items-center justify-center mt-20 mb-20">
           {/* <h1 className="font-Gazzetta instrument-header">Gatekeeper</h1> */}
           <div className="flex flex-col h-fit relative">
             <Image
@@ -167,10 +167,10 @@ export default function ProductViewer() {
         <div className="flex justify-between gap-10 flex-wrap">
           <div className="instrument-primary-tooltip flex flex-col max-w-lg flex-[3] min-w-[400px]">
             <h2>24 fret guitar</h2>
-            <h4 className="mt-5">
+            <h3 className="mt-5 text-secondary">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt
-            </h4>
+            </h3>
             <div className="flex items-center mt-10 gap-10">
               <button className="">ORDER NOW</button>
               <h3 className="">£3,500</h3>
@@ -214,7 +214,7 @@ export default function ProductViewer() {
           </div>
         </div>
 
-        <button className="ml-auto mr-auto mt-5 alt items-center flex">
+        <button className="ml-auto mr-auto mt-10 items-center flex">
           How it's made
           <div className="inline-block ml-5 rounded-full">
             <Image

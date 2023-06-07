@@ -6,11 +6,39 @@ export default function Home() {
     <main className="site-core">
       <div className="wood-texture" />
       <div className="site-content">
-        <section className="relative h-screen flex justify-center items-center pb-20">
+        <section className="section-0 relative h-screen flex justify-center items-center pb-20 z-10">
           <ProductViewer />
         </section>
-        <section className="section-1 bg-blackColor flex ml-auto mr-auto h-screen justify-center items-center">
-          news wheel
+        <section className="section-1 bg-primary flex ml-auto mr-auto items-center">
+          <div className=" overflow-hidden h-full flex-1 cutout-back">
+            <Image
+              className="cutout-2"
+              alt="guitar"
+              width={1920}
+              height={1080}
+              src={`http://davefarmiloe.com/wp-content/uploads/2023/03/0aedd690-5f45-4795-8b0d-961a9b9dc076.jpg`}
+            />
+          </div>
+          <div className="flex flex-1 justify-center cutout-back">
+            <div className="flex flex-col cutout-3 max-w-[800px] p-20 bg-whiteColor text-blackColor gap-y-10">
+              <h1 className=" font-bold">Precision. Passion. Perfection.</h1>
+              <h3 className="">
+                At our core, we believe in a comprehensive design approach that
+                encompasses our deep understanding of what we aim to achieve and
+                how to accomplish it with utmost professionalism. We embrace
+                limitless possibilities in our creative process, taking pride in
+                meticulously crafting every aspect. From hand-selecting seasoned
+                woods to fabricating intricate components, including custom
+                pickups and bridges, we pour our heart and soul into each
+                instrument. Our commitment shines through in the end results,
+                justifying the dedication and passion we infuse into every
+                creation.
+              </h3>
+            </div>
+          </div>
+        </section>
+        <section className="flex ml-auto h-screen mr-auto items-center justify-center">
+          the design process
         </section>
         <section className="flex ml-auto mr-auto h-screen  justify-center items-center">
           testimonials
