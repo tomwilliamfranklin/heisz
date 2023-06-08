@@ -9,11 +9,11 @@ export default function Home() {
     <main className="site-core">
       <div className="wood-texture" />
       <div className="site-content">
-        <section className="section-0 relative h-screen flex justify-center items-center pb-20 z-10">
+        <section className="section-0 relative flex justify-center items-center pb-20 z-10">
           <ProductViewer />
         </section>
-        <section className="section-1 bg-primary flex ml-auto mr-auto items-center">
-          <div className="overflow-hidden h-full flex-1 cutout-back">
+        <section className="section-1 bg-primary flex ml-auto mr-auto items-center flex-wrap p-5 gap-10">
+          <div className="overflow-hidden h-full flex-1 cutout-back basis-[500px]">
             <Image
               className="cutout-4 object-cover"
               alt="guitar"
@@ -22,10 +22,10 @@ export default function Home() {
               src={`http://davefarmiloe.com/wp-content/uploads/2022/08/T42-10.jpg`}
             />
           </div>
-          <div className="flex flex-1 justify-center cutout-back">
-            <div className="flex flex-col cutout-3 max-w-[800px] p-20 bg-whiteColor text-blackColor gap-y-10">
+          <div className="flex flex-1 justify-center cutout-back basis-[800px] max-w-full">
+            <div className="text-box cutout-3 max-w-[800px] bg-whiteColor text-blackColor">
               <h2 className=" font-bold">Precision. Passion. Perfection.</h2>
-              <h4 className=" text-blackColorSecondary">
+              <h5 className=" text-blackColorSecondary">
                 At our core, we believe in a comprehensive design approach that
                 encompasses our deep understanding of what we aim to achieve and
                 how to accomplish it with utmost professionalism. We embrace
@@ -36,18 +36,18 @@ export default function Home() {
                 instrument. Our commitment shines through in the end results,
                 justifying the dedication and passion we infuse into every
                 creation.
-              </h4>
+              </h5>
             </div>
           </div>
         </section>
         <section className="relative flex flex-col ml-auto mr-auto items-center justify-start">
           <div className="flex justify-center flex-col max-w-[1200px] text-center gap-y-10">
-            <h2>Our Process</h2>
-            <h4 className=" text-secondary">
+            <h3>Our Process</h3>
+            <h5 className=" text-secondary">
               In each step, our comprehensive design approach and limitless
               creativity guide us, culminating in extraordinary instruments that
               speak volumes about our commitment to excellence.
-            </h4>
+            </h5>
             <h2 className="font-verveine text-accent">START</h2>
           </div>
           <CreationProcessTimeline />

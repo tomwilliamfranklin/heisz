@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: "Farmiloe Instruments",
-  description: "Bespoke Instruments and Woodworking",
+  description: "Bespoke Isntruments and Woodworking",
   alternatives: {
     stylesheet: {},
   },

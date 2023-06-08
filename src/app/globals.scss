@@ -50,6 +50,7 @@
     position: relative;
     overflow-x: hidden;
     @apply w-screen;
+    max-width: 100%;
   }
 
   .site-content {
@@ -293,6 +294,27 @@
     }
   }
 
+  .timeline-entry {
+    @apply flex relative p-5 lg:p-20 2xl:gap-40 w-full flex-wrap;
+  }
+
+  .timeline-box {
+    @apply relative flex-1 basis-[500px] flex justify-center;
+  }
+
+  .testimony {
+    @apply flex flex-col cutout-1 max-w-[800px]  bg-whiteColor text-blackColor max-h-full;
+    @apply text-box;
+  }
+
+  .timeline-number {
+    @apply absolute z-[1] top-[0%] translate-y-[-50%] inline-block font-verveine text-accent leading-10;
+  }
+
+  .text-box {
+    @apply flex flex-col gap-y-5 p-10 pl-5 pr-5 lg:gap-y-10 lg:p-20;
+  }
+
   .svgs {
     position: absolute;
     opacity: 0;
@@ -314,7 +336,7 @@
     word-break: break-all;
     letter-spacing: 1.75pt;
     word-break: keep-all;
-    @apply text-4xl md:text-6xl lg:text-7xl;
+    @apply text-7xl lg:text-7xl;
   }
 
   h2 {
@@ -322,15 +344,15 @@
   }
 
   h3 {
-    @apply text-xl md:text-4xl drop-shadow-md;
+    @apply text-xl md:text-5xl drop-shadow-md;
   }
 
   h4 {
-    @apply text-2xl drop-shadow-md;
+    @apply text-2xl md:text-3xl drop-shadow-md;
   }
 
   h5 {
-    @apply text-xl drop-shadow-md;
+    @apply text-base md:text-2xl drop-shadow-md;
   }
 
   p {
