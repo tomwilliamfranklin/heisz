@@ -18,7 +18,7 @@ export default function ProductViewer() {
       name: "T-42",
       tags: [
         { label: "T-42", posX: 30, posY: 65, rotate: 0 },
-        { label: "NEW!", posX: 40, posY: 20, rotate: 10 },
+        { label: "NEW*", posX: 40, posY: 20, rotate: 10 },
       ],
     },
     // {
