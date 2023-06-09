@@ -7,9 +7,8 @@ export default function Testimonals() {
       <div className="max-w-[1200px] flex flex-col text-center gap-5 lg:gap-10">
         <h2>Testimonals</h2>
         <h5 className=" text-secondary">
-          In each step, our comprehensive design approach and limitless
-          creativity guide us, culminating in extraordinary instruments that
-          speak volumes about our commitment to excellence.
+          Hear what our valued customers have to say about <br /> their
+          experiences with our instruments and services.
         </h5>
       </div>
       <div className="flex gap-10 flex-1 flex-wrap">

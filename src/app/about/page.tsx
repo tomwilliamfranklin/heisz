@@ -3,51 +3,46 @@ import Image from "next/image";
 
 export default function about() {
   return (
-    <div className="min-h-[100vh] flex justify-center align-center pt-[150px] pb-[250px]">
+    <div className="min-h-[100vh] flex justify-center align-center pt-[150px] pb-[250px] flex-col">
       <div className="wood-texture" />
-      <section className="section-about flex flex-col items-center p-5 lg:p-20 max-w-[1500px]">
-        <div className="flex justify-center flex-col text-center gap-y-10">
-          <h2>
-            Crafting Harmonies,
-            <br /> Rooted in Family Tradition
-          </h2>
-          <h5 className=" text-secondary">
-            Crafting harmonies with heart, our family-owned guitar company
-            embodies tradition and artistry. Meticulously handcrafted, each
-            instrument carries our legacy and personal touch. From premium
-            materials to soulful curves, our passion drives every step. Welcome
-            to a world of melodic wonders.
-          </h5>
-          <div className="flex flex-row gap-5 lg:gap-20 items-center flex-wrap lg:mt-10">
-            <div className="about-us-box flex-[1] max-h-[1000px] basis-[450px]">
-              <Image
-                className="cutout-2 h-full w-auto object-cover"
-                alt="workshop"
-                width={1920}
-                height={1080}
-                src={`/Workshop_placeholder.png`}
-              />
-            </div>
-            <div className="about-us-box flex-[1] flex justify-center cutout-back basis-[500px]">
-              <div className="text-box cutout-4 max-w-[800px] bg-primary text-whiteColor">
-                <h3 className=" font-bold">Our Workshop</h3>
-                <h6 className=" text-secondary">
-                  Our workshop is the heart of our instrument making process.
-                  With meticulous craftsmanship and unwavering dedication, we
-                  shape raw materials into exceptional instruments that capture
-                  the essence of music. Step inside and experience the
-                  atmosphere filled with the sounds of tools and the aroma of
-                  freshly cut wood. Our workshop is equipped with specialized
-                  instruments and equipment that support our creative vision. We
-                  blend traditional techniques with modern advancements to
-                  carefully craft each instrument, ensuring the highest quality
-                  standards. This workshop is where our passion and expertise
-                  converge, bringing melodies to life and fulfilling the dreams
-                  of musicians seeking reliable and inspiring instruments.
-                </h6>
-              </div>
-            </div>
+      <section className="flex flex-col w-screen text-center max-w-[1500px] gap-y-10 p-5 lg:p-20 items-center ml-auto mr-auto">
+        <h2>
+          Crafting Harmonies,
+          <br /> Rooted in Family Tradition
+        </h2>
+      </section>
+      <section className="section-1 bg-primary flex ml-auto mr-auto items-center flex-wrap p-5 gap-10 mt-[200px]">
+        <div className="overflow-hidden h-full flex-1 cutout-back basis-[500px]">
+          <Image
+            className="cutout-4 object-cover"
+            alt="guitar"
+            width={1920}
+            height={1080}
+            src={`/Workshop_placeholder.png`}
+          />
+        </div>
+        <div className="flex flex-1 justify-center cutout-back basis-[800px] max-w-full">
+          <div className="text-box cutout-3 max-w-[800px] bg-whiteColor text-blackColor">
+            <h2 className=" font-bold">Our Workshop</h2>
+            <h6 className=" text-blackColorSecondary">
+              At the heart of our instrument making process is our workshop.
+              With meticulous craftsmanship and unwavering dedication, we shape
+              raw materials into exceptional instruments that capture the
+              essence of music. Step inside and experience the atmosphere filled
+              with the sounds of tools and the aroma of freshly cut wood. Our
+              workshop is equipped with specialized instruments and equipment
+              that support our creative vision. We blend traditional techniques
+              with modern advancements to carefully craft each instrument,
+              ensuring the highest quality standards. This workshop is where our
+              passion and expertise converge, bringing melodies to life and
+              fulfilling the dreams of musicians seeking reliable and inspiring
+              instruments.
+            </h6>
           </div>
+        </div>
+      </section>
+      <section className="section-about flex flex-col items-center p-5 lg:p-20 pt-0 lg:pt-0 max-w-[1500px] ml-auto mr-auto">
+        <div className="flex justify-center flex-col text-center gap-y-10">
           <div className="flex flex-col gap-y-20 mt-20">
             <h2>Our Team</h2>
             <div className="flex flex-row gap-5 lg:gap-20 flex-wrap">
@@ -102,16 +97,31 @@ export default function about() {
               </div>
               <div className="about-us-box flex justify-center cutout-back">
                 <div className="text-box cutout-4 max-w-[800px] bg-primary text-whiteColor">
-                  <h3 className=" font-bold">Charles - Apprentice</h3>
+                  <h3 className=" font-bold">Charles - Engineer</h3>
                   <h6 className=" text-secondary">
-                    I started making my first instrument before I went to
-                    university, a soprano ukulele. I completed it in my holidays
-                    to learn more of the skills and to keep me busy. After
-                    finishing my degree in Product Design at Coventry in Summer
-                    of 2021 I joined David in making instruments fulltime.
-                    <br />
-                    <br />I am bringing new technologies and skills learnt on my
-                    course into the business, currently focussing on CAD/CAM
+                    Since a young age, I've been captivated by the art of
+                    crafting instruments. Even before university, I embarked on
+                    my inaugural project—a beautifully crafted soprano ukulele.
+                    Throughout my academic years at Coventry, where I pursued a
+                    degree in Product Design, I dedicated my holiday breaks to
+                    refining my skills and expanding my knowledge in the realm
+                    of instrument making.
+                    <br /> <br />
+                    The summer of 2021 marked a significant milestone as I
+                    joined forces with David, a revered master in the field.
+                    Together, we bring a dynamic fusion of expertise to the
+                    table. With my Product Design background and a focus on
+                    integrating CAD/CAM technologies into our workflow, we
+                    harmonize the rich traditions of instrument making with the
+                    advancements of modern technology. This convergence allows
+                    us to achieve unrivaled precision, enhance efficiency, and
+                    unlock new realms of creative innovation. Our unwavering
+                    commitment to meticulous craftsmanship and the relentless
+                    pursuit of pushing engineering boundaries defines our
+                    approach to creating exceptional instruments. With every
+                    instrument we lovingly craft, our goal is to ignite a sense
+                    of inspiration and exceed the expectations of musicians who
+                    hold our creations in their hands.
                   </h6>
                 </div>
               </div>
