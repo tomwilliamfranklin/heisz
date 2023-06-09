@@ -32,7 +32,7 @@ export default function Navbar() {
                     })}
                   >
                     <Link className="link" href="/">
-                      Home
+                      <h4>Home</h4>
                     </Link>
                   </li>
                   <li
@@ -41,7 +41,7 @@ export default function Navbar() {
                     })}
                   >
                     <Link className="link" href="/about">
-                      About
+                      <h4>About</h4>
                     </Link>
                   </li>
                   <li
@@ -50,7 +50,7 @@ export default function Navbar() {
                     })}
                   >
                     <Link className="link" href="/contact">
-                      Purchase
+                      <h4>Purchase</h4>
                     </Link>
                   </li>
                 </ul>

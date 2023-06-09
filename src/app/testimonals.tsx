@@ -30,7 +30,7 @@ export default function Testimonals() {
             </h1>
             <div className="flex-[2] flex flex-col gap-5 lg:gap-10">
               <h4 className=" font-bold">Dave's Ukelele</h4>
-              <h5 className=" text-blackColorSecondary">
+              <h6 className=" text-blackColorSecondary">
                 "it has completely stolen my heart. From its stunning mahogany
                 body to its flawless craftsmanship, this instrument is a work of
                 art. Its enchanting design is only matched by the mesmerizing
@@ -40,7 +40,7 @@ export default function Testimonals() {
                 tunes, this ukelele brings every note to life, making it an
                 absolute joy to play and a constant companion for moments of
                 pure musical bliss.""
-              </h5>
+              </h6>
             </div>
           </div>
         </div>
@@ -61,7 +61,7 @@ export default function Testimonals() {
             </h1>
             <div className="flex-[2] flex flex-col gap-5 lg:gap-10">
               <h4 className=" font-bold">Thank you for the Dola</h4>
-              <h5 className=" text-blackColorSecondary">
+              <h6 className=" text-blackColorSecondary">
                 "The Dola Guitar is a true gem, capturing my heart with its
                 unique charm and delightful sound. With its distinct body shape
                 and exquisite craftsmanship, this guitar stands out as a work of
@@ -71,7 +71,7 @@ export default function Testimonals() {
                 chords, the Dola Guitar fills the air with a captivating melody,
                 igniting a sense of joy and creativity that is truly
                 enchanting."
-              </h5>
+              </h6>
             </div>
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function Testimonals() {
             </h1>
             <div className="flex-[2] flex flex-col gap-5 lg:gap-10">
               <h4 className=" font-bold">Custom T-42</h4>
-              <h5 className=" text-blackColorSecondary">
+              <h6 className=" text-blackColorSecondary">
                 "The Luminous Harmony Acoustic Guitar has become my musical
                 soulmate, captivating me with its exceptional craftsmanship and
                 breathtaking sound. With a solid spruce top and mahogany back
@@ -102,7 +102,7 @@ export default function Testimonals() {
                 ballads or energetic riffs, the Luminous Harmony effortlessly
                 translates my emotions into melodic expressions, becoming an
                 indispensable companion in my musical journey."
-              </h5>
+              </h6>
             </div>
           </div>
         </div>

@@ -304,6 +304,10 @@
     @apply relative flex-1 basis-[500px] flex justify-center;
   }
 
+  .about-us-box {
+    @apply relative flex-1 flex justify-center basis-[500px];
+  }
+
   .testimony {
     @apply flex flex-col cutout-1 max-w-[800px]  bg-whiteColor text-blackColor max-h-full;
     @apply text-box;
@@ -358,15 +362,15 @@
   }
 
   h5 {
-    @apply text-base md:text-2xl drop-shadow-md;
+    @apply text-xl md:text-2xl drop-shadow-md;
+  }
+
+  h6 {
+    @apply text-lg md:text-xl;
   }
 
   p {
     @apply text-base;
-  }
-
-  a {
-    @apply text-lg lg:text-3xl;
   }
 
   label {
