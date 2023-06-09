@@ -32,7 +32,12 @@ export default function RootLayout({
       />
       <link rel="stylesheet" href="https://use.typekit.net/vex5gtt.css"></link>
       <link rel="stylesheet" href="https://use.typekit.net/vex5gtt.css"></link>
-      <body className={classNames(inter.className, "overflow-x-h")}>
+      <body
+        className={classNames(
+          inter.className,
+          "relative overflow-x-h pb-[250px]"
+        )}
+      >
         <div className="svgs">
           <svg preserveAspectRatio="none">
             <clipPath id="section-top" clipPathUnits="objectBoundingBox">
@@ -50,7 +55,6 @@ export default function RootLayout({
             </clipPath>
           </svg>
         </div>
-
         <Navbar />
         {children}
         <Footer />

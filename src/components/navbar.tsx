@@ -21,8 +21,8 @@ export default function Navbar() {
             alt="Farmiloe"
           />
         </div>
-        <div className="h-[100px] w-screen flex justify-center">
-          <div className="cutout-back w-fit h-full">
+        <div className="h-[100px] w-screen flex justify-end">
+          <div className="cutout-back flex min-w-[400px] h-full xl:pr-[5%]">
             <div className="cutout-1 h-full">
               <nav className="block pr-20 pl-20 h-full">
                 <ul className="h-full flex items-center gap-7 relative">
@@ -46,16 +46,17 @@ export default function Navbar() {
                   </li>
                   <li
                     className={classNames("relative text-secondary", {
-                      "text-whiteColor font-bold": pathname === "/content",
+                      "text-whiteColor font-bold": pathname === "/contact",
                     })}
                   >
-                    <Link className="link" href="/content">
+                    <Link className="link" href="/contact">
                       Purchase
                     </Link>
                   </li>
                 </ul>
               </nav>
             </div>
+            <div className=" h-full flex flex-1"> </div>
           </div>
         </div>
       </div>

@@ -19,17 +19,16 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary: #061425;
-    --secondary: #b29a8b;
-    --accent: #3f00ff;
-    --accent2: #ef4444;
-    --accent3: #0ea5e9;
+    --primary: #393330;
+    --secondary: #baa496;
     --background: #303a44;
-
+    --accent: #4169e1;
+    --highlight: #3f00ff;
     --primaryDark: #191919;
     --highlight: #e80000;
-    --whiteColor: #f7f7ff;
+    --whiteColor: rgba(231, 231, 231, 1);
     --blackColor: #29231c;
+    --blackColorSecondary: #403834;
     --greyColor: #99938e;
     --transparent: transparent;
   }
@@ -71,7 +70,7 @@
     background-repeat: repeat-y;
     mask-image: radial-gradient(
       circle at 75%,
-      rgba(0, 0, 0, 0.2) 5%,
+      rgba(0, 0, 0, 0.5) 5%,
       transparent
     );
   }
@@ -294,6 +293,9 @@
     }
   }
 
+  .section-about {
+  }
+
   .timeline-entry {
     @apply flex relative p-5 lg:p-20 2xl:gap-40 w-full flex-wrap;
   }
@@ -313,6 +315,10 @@
 
   .text-box {
     @apply flex flex-col gap-y-5 p-10 pl-5 pr-5 lg:gap-y-10 lg:p-20;
+  }
+
+  .social-media-tile {
+    @apply flex w-[100px] h-[100px] lg:w-[150px] lg:h-[150px] bg-primary cutout-1 items-center justify-center;
   }
 
   .svgs {
@@ -336,7 +342,7 @@
     word-break: break-all;
     letter-spacing: 1.75pt;
     word-break: keep-all;
-    @apply text-7xl lg:text-7xl;
+    @apply text-7xl lg:text-7xl drop-shadow-md;
   }
 
   h2 {
