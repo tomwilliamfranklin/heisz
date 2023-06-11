@@ -57,7 +57,10 @@ export default function RootLayout({
         </div>
         <div className="bg-accent top-0 w-full font-bold">
           <div className="flex w-full justify-center gap-5">
-            <h6>some alert message about our current stock</h6>
+            <h6>
+              Our new T-42 is in stock! call or email to purchase | 07525 849608
+              | farmiloeinstruments@yahoo.com
+            </h6>
           </div>
         </div>
         <Navbar />

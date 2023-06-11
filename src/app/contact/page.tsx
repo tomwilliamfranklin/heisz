@@ -35,15 +35,18 @@ export default function Contact() {
                 </span>
               </h5>
             </ul>
-            <h5 className=" text-blackColorSecondary">
-              We can't wait to hear from you!
-            </h5>
             <h5>
-              Address:{" "}
+              Full Address:{" "}
               <span className=" font-bold">
                 Unit 2a, Manor House Farm, Woodford, Kettering, NN14 4ES
               </span>
             </h5>
+            <h5 className=" text-blackColorSecondary">
+              We can't wait to hear from you!
+            </h5>
+            <h6 className=" text-blackColorSecondary">
+              Please do not visit the workshop without a scheduled appointment*
+            </h6>
           </div>
           <div className="flex-1 basis-[450px] flex items-center">
             <iframe
