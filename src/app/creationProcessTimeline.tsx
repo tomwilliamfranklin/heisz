@@ -17,7 +17,7 @@ export default function CreationProcessTimeline() {
           />
         </div>
         <div className="timeline-box flex justify-center cutout-back">
-          <h1 className="timeline-number right-[0px] left-[20px] lg:left-[unset] lg:right-[-50px]">
+          <h1 className="timeline-number right-[0px] left-[20px] 2xl:left-[unset] 2xl:right-[-50px]">
             1.
           </h1>
           <div className="text-box cutout-4 max-w-[800px] bg-primary text-whiteColor">
@@ -43,7 +43,7 @@ export default function CreationProcessTimeline() {
           />
         </div>
         <div className="flex timeline-box justify-center cutout-back">
-          <h1 className="timeline-number left-[20px] lg:left-[-50px]">2</h1>
+          <h1 className="timeline-number left-[20px] 2xl:left-[-50px]">2</h1>
           <div className="text-box cutout-3 max-w-[800px] bg-primary text-whiteColor">
             <h3 className=" font-bold">Craftsmanship.</h3>
             <h5 className=" text-secondary">
@@ -69,7 +69,7 @@ export default function CreationProcessTimeline() {
           />
         </div>
         <div className="flex timeline-box justify-center cutout-back">
-          <h1 className="timeline-number right-[0px] left-[20px] lg:left-[unset] lg:right-[-70px]">
+          <h1 className="timeline-number right-[0px] left-[20px] 2xl:left-[unset] 2xl:right-[-70px]">
             3*
           </h1>
           <div className="text-box cutout-3 max-w-[800px] bg-primary text-whiteColor">
@@ -95,7 +95,7 @@ export default function CreationProcessTimeline() {
           />
         </div>
         <div className="flex timeline-box justify-center cutout-back">
-          <h1 className="timeline-number left-[20px] lg:left-[-50px]">4-</h1>
+          <h1 className="timeline-number left-[20px] 2xl:left-[-50px]">4-</h1>
           <div className="text-box cutout-4 max-w-[800px] bg-primary text-whiteColor">
             <h3 className=" font-bold"> Testing & Delivery.</h3>
             <h5 className=" text-secondary">

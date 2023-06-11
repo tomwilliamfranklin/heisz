@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function about() {
   return (
-    <div className="min-h-[100vh] flex justify-center align-center pt-[150px] pb-[250px] flex-col">
+    <div className="min-h-[100vh] flex justify-center align-center pt-[150px] lg:pt-[0px] pb-[250px] flex-col">
       <div className="wood-texture" />
       <section className="flex flex-col w-screen text-center max-w-[1500px] gap-y-10 p-5 lg:p-20 items-center ml-auto mr-auto">
         <h2>

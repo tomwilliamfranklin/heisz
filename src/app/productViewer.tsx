@@ -107,7 +107,7 @@ export default function ProductViewer() {
   return (
     <div className="relative w-full min-h-full flex flex-col">
       <div className="w-full flex flex-col max-w-[1500px] m-auto relative flex-1">
-        <div className="relative flex flex-1 items-center justify-center mt-20 mb-20">
+        <div className="relative flex flex-1 items-center justify-center mt-0 mb-20">
           {/* <h1 className="font-Gazzetta instrument-header">Gatekeeper</h1> */}
           <div className="flex flex-col h-fit relative">
             <Image
@@ -213,11 +213,11 @@ export default function ProductViewer() {
           </div>
         </div>
 
-        <button className="ml-auto mr-auto mt-10 items-center flex">
+        <button className="ml-auto mr-auto mt-10 items-center flex ">
           How it's made
-          <div className="inline-block ml-5 rounded-full">
+          <div className="inline-block ml-5 rounded-full animate-bounce">
             <Image
-              className="rotate-[180deg]  w-[30px] mr-[-5px] invert"
+              className="rotate-[180deg] w-[30px] mr-[-5px] invert"
               src={arrow}
               alt="arrowleft"
             />

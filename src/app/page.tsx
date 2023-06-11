@@ -23,7 +23,7 @@ export default function Home() {
             />
           </div>
           <div className="flex flex-1 justify-center cutout-back basis-[800px] max-w-full">
-            <div className="text-box cutout-3 max-w-[800px] bg-whiteColor text-blackColor">
+            <div className="text-box cutout-3 lg:max-w-[800px] bg-whiteColor text-blackColor">
               <h2 className=" font-bold">Precision. Passion. Perfection.</h2>
               <h5 className=" text-blackColorSecondary">
                 At our core, we believe in a comprehensive design approach that

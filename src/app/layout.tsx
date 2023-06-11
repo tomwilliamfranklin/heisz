@@ -23,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className=" overflow-x-hidden">
       {/* TODO FONTS  */}
       <link
         id="1"
@@ -35,7 +35,7 @@ export default function RootLayout({
       <body
         className={classNames(
           inter.className,
-          "relative overflow-x-h pb-[250px]"
+          "relative overflow-x-h pb-[250px] w-screen overflow-x-hidden"
         )}
       >
         <div className="svgs">

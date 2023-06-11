@@ -297,11 +297,11 @@
   }
 
   .timeline-entry {
-    @apply flex relative p-5 lg:p-20 2xl:gap-40 w-full flex-wrap;
+    @apply flex relative p-5 lg:p-20 gap-20 2xl:gap-40 w-full flex-wrap;
   }
 
   .timeline-box {
-    @apply relative flex-1 basis-[500px] flex justify-center;
+    @apply relative flex-1 basis-[600px] flex justify-center;
   }
 
   .about-us-box {
@@ -318,7 +318,7 @@
   }
 
   .text-box {
-    @apply flex flex-col gap-y-5 p-10 pl-5 pr-5 lg:gap-y-10 lg:p-20;
+    @apply flex flex-col gap-y-5 p-10 pl-5 pr-5 lg:gap-y-10 lg:p-20 max-w-[100vw];
   }
 
   .social-media-tile {
