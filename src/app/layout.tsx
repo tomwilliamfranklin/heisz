@@ -55,6 +55,11 @@ export default function RootLayout({
             </clipPath>
           </svg>
         </div>
+        <div className="bg-accent top-0 w-full font-bold">
+          <div className="flex w-full justify-center gap-5">
+            <h6>some alert message about our current stock</h6>
+          </div>
+        </div>
         <Navbar />
         {children}
         <Footer />

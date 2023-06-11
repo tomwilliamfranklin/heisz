@@ -50,7 +50,7 @@ export default function Navbar() {
                     })}
                   >
                     <Link className="link" href="/contact">
-                      <h4>Purchase</h4>
+                      <h4>Order</h4>
                     </Link>
                   </li>
                 </ul>

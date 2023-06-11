@@ -9,7 +9,7 @@ export default function Home() {
     <main className="site-core">
       <div className="wood-texture" />
       <div className="site-content">
-        <section className="section-0 relative flex justify-center items-center pb-20 z-10">
+        <section className="section-0 relative flex justify-center items-center pb-20 z-10 min-h-[90vh]">
           <ProductViewer />
         </section>
         <section className="section-1 bg-primary flex ml-auto mr-auto items-center flex-wrap p-5 gap-10">
@@ -26,16 +26,18 @@ export default function Home() {
             <div className="text-box cutout-3 lg:max-w-[800px] bg-whiteColor text-blackColor">
               <h2 className=" font-bold">Precision. Passion. Perfection.</h2>
               <h5 className=" text-blackColorSecondary">
-                At our core, we believe in a comprehensive design approach that
-                encompasses our deep understanding of what we aim to achieve and
-                how to accomplish it with utmost professionalism. We embrace
-                limitless possibilities in our creative process, taking pride in
-                meticulously crafting every aspect. From hand-selecting seasoned
-                woods to fabricating intricate components, including custom
-                pickups and bridges, we pour our heart and soul into each
-                instrument. Our commitment shines through in the end results,
-                justifying the dedication and passion we infuse into every
-                creation.
+                Welcome to our world of craftsmanship, where we bring together a
+                holistic design approach with unwavering professionalism. We
+                believe in limitless possibilities, and our passion drives us to
+                meticulously craft every aspect of our instruments. From
+                hand-selecting seasoned woods to crafting custom pickups and
+                bridges, we pour our heart and soul into each creation. Whether
+                you seek a one-of-a-kind instrument tailored to your unique
+                vision or prefer one from our exceptional catalog, we're here to
+                make your musical dreams a reality. Prepare to embark on a
+                captivating journey where artistry meets precision, and where
+                your instrument becomes a true reflection of your passion and
+                individuality.
               </h5>
             </div>
           </div>
