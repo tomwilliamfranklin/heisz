@@ -5,5 +5,19 @@
   "ourProcessHeader": "Our Process",
   "ourProcessDescription": "In each step, our comprehensive design approach and limitless creativity guide us, culminating in extraordinary instruments that speak volumes about our commitment to excellence.",
   "ourProcessStart": "START",
-  "ourProcessFinish": "DELIVERY"
+  "ourProcessFinish": "DELIVERY",
+  "processSteps": [
+    {
+      "image": "/public/charles-1024x768.webp",
+      "stepTitle": "Consultation & Design.",
+      "stepDescription": "Our collaborative process begins by deeply understanding the client's aspirations, merging it with our expertise to meticulously plan and execute a guitar design that captures their vision with utmost professionalism and precision.",
+      "stepNumber": "1."
+    },
+    {
+      "image": "/public/img-20230130-wa0012.webp",
+      "stepTitle": "Craftsmanship.",
+      "stepDescription": "Imbued with passion, we painstakingly handcraft every element of the guitar, devoting ourselves to the art of selecting seasoned woods, honing our skills in fabricating intricate components, including custom pickups and bridges, to ensure each instrument is a testament to our unwavering commitment to detail and craftsmanship.",
+      "stepNumber": "2"
+    }
+  ]
 }
