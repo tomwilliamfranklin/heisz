@@ -6,6 +6,7 @@ import { Product } from "@/data/DataTypes";
 import Image from "next/image";
 import classNames from "classnames";
 import arrow from "../../public/arrow.svg";
+import matter from "gray-matter";
 
 export default function ProductViewer() {
   const [products, setProducts] = useState<Product[]>([]);
@@ -28,18 +29,20 @@ export default function ProductViewer() {
     markdownFiles.keys().forEach((markdownFile) => {
       const name = markdownFile.split(".", 2)[1] + ".md";
 
-      const markdown = require("../content/products" + name);
+      const markdown = require("../content/products/2023-08-06-the-shrek.md");
 
       // push each "fetch" of an article to a array of promises. We then listen for when all these promises are finished later, to set them to state.
       dataPromises.push(
         fetch(markdown)
           .then((response) => {
             // fetch markdown delivers the text of the markdown
+            console.log("E: ", response);
             return response.text();
           })
           .then((text) => {
             // using parse-md library to split the text from the "metadata" at top of markdown.
             const { metadata, content } = parseMD(text);
+            console.log(text);
 
             // push each metadata / content as a single BlogPost object to an array of BlogPosts.
             newProducts.push({
@@ -251,3 +254,20 @@ export default function ProductViewer() {
     </div>
   );
 }
+
+// export async function getStaticProps(context) {
+//   // extracting the slug from the context
+//   const { slug } = context.params;
+
+//   // retrieving the Markdown file associated to the slug
+//   // and reading its data
+//   const content = await import(`../../posts/${slug}.md`);
+//   const data = matter(content.default);
+
+//   return {
+//     props: {
+//       frontmatter: data.data,
+//       markdownBody: data.content,
+//     },
+//   };
+// }

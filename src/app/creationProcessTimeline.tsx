@@ -12,6 +12,7 @@ export default function CreationProcessTimeline() {
       {home.processSteps.map((step, index) => {
         return (
           <div
+            key={index}
             className={`timeline-entry ${
               (index + 1) % 2 == 0 ? "flex-row-reverse" : ""
             }`}
