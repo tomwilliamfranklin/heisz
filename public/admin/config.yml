@@ -1,8 +1,8 @@
+site_url: https://heisz.netlify.app/
 backend:
   name: git-gateway
   branch: main # Branch to update (optional; defaults to master)
-media_folder: public/img
-public_folder: img
+media_folder: "public"
 collections:
   - name: "pages"
     label: "Pages"
