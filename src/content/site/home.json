@@ -18,6 +18,12 @@
       "stepTitle": "Craftsmanship.",
       "stepDescription": "Imbued with passion, we painstakingly handcraft every element of the guitar, devoting ourselves to the art of selecting seasoned woods, honing our skills in fabricating intricate components, including custom pickups and bridges, to ensure each instrument is a testament to our unwavering commitment to detail and craftsmanship.",
       "stepNumber": "2"
+    },
+    {
+      "image": "/public/4f986883-a8ff-449c-9745-0debeb4db00f.webp",
+      "stepTitle": "Finishing & Assembly.",
+      "stepDescription": "Our dedication extends to the final stages, where we skillfully apply impeccable finishes, harmoniously marrying aesthetics and durability. With meticulous precision, we assemble the guitar, paying utmost attention to alignment.",
+      "stepNumber": "3*"
     }
   ]
 }
