@@ -1,56 +1,69 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
+import parseMD from "parse-md";
+import { Product } from "@/data/DataTypes";
 import Image from "next/image";
-import arrow from "../../public/arrow.svg";
 import classNames from "classnames";
-
-export type Product = {
-  image: string;
-  name: string;
-  tags?: { label: string; posX: number; posY: number; rotate: number }[];
-};
+import arrow from "../../public/arrow.svg";
 
 export default function ProductViewer() {
-  const products: Product[] = [
-    {
-      image: "guitar-placeholder1.png",
-      name: "T-42",
-      tags: [
-        { label: "T-42", posX: 30, posY: 65, rotate: 0 },
-        { label: "NEW*", posX: 40, posY: 20, rotate: 10 },
-      ],
-    },
-    // {
-    //   image: "guitar-placeholder2.png",
-    //   name: "Gatekeeper",
-    //   tags: [
-    //     { label: "Gatekeeper", posX: 20, posY: 20, rotate: 0 },
-    //     { label: "THE ORIGINAL", posX: 20, posY: 70, rotate: -20 },
-    //   ],
-    // },
-    {
-      image: "guitar-placeholder3.png",
-      name: "The Shrek",
-      tags: [{ label: "THE SHREK", posX: 20, posY: 70, rotate: 0 }],
-    },
-    {
-      image: "guitar-placeholder4.png",
-      name: "Gatesmasher",
-      tags: [{ label: "GATESMASHER", posX: 20, posY: 70, rotate: 0 }],
-    },
-    {
-      image: "guitar-placeholder5.png",
-      name: "Gatesmasher",
-      tags: [{ label: "COMING SOON", posX: 20, posY: 70, rotate: 0 }],
-    },
-  ];
-
+  const [products, setProducts] = useState<Product[]>([]);
   const [currentProduct, setCurrentProduct] = useState(0);
   const [leftAnimate, setLeftAnimate] = useState(false);
   const [rightAnimate, setRightAnimate] = useState(false);
   const [endLeftAnimate, setEndLeftAnimate] = useState(false);
   const [endRightAnimate, setEndRightAnimate] = useState(false);
+
+  useEffect(() => {
+    const newProducts: Product[] = [];
+
+    const markdownFiles = require.context(
+      "../content/products",
+      false,
+      /\.\/.*md/i
+    );
+
+    const dataPromises: Promise<boolean>[] = [];
+    markdownFiles.keys().forEach((markdownFile) => {
+      const name = markdownFile.split(".", 2)[1] + ".md";
+
+      const markdown = require("../content/products" + name);
+
+      // push each "fetch" of an article to a array of promises. We then listen for when all these promises are finished later, to set them to state.
+      dataPromises.push(
+        fetch(markdown)
+          .then((response) => {
+            // fetch markdown delivers the text of the markdown
+            return response.text();
+          })
+          .then((text) => {
+            // using parse-md library to split the text from the "metadata" at top of markdown.
+            const { metadata, content } = parseMD(text);
+
+            // push each metadata / content as a single BlogPost object to an array of BlogPosts.
+            newProducts.push({
+              ...(metadata as Product),
+              id: "markdownFile",
+            });
+            return true;
+          })
+          .catch((e) => {
+            // this should never happen... but you know
+            // console.log(e);
+            return false;
+          })
+      );
+
+      Promise.all(dataPromises).then(() => {
+        newProducts.sort((a, b) => {
+          return b.date.getTime() - a.date.getTime();
+        });
+
+        setProducts(newProducts);
+      });
+    });
+  }, []);
 
   const onAnimateEnd = (e: any) => {
     if (e.propertyName === "transform") {
@@ -121,9 +134,9 @@ export default function ProductViewer() {
               alt="guitar placeholder"
               width={1536}
               height={726}
-              src={`/product-heros/${currentProductData.image}`}
+              src={`/product-heros/${currentProductData?.cover}`}
             />
-            {currentProductData.tags?.map((t) => {
+            {/* {currentProductData.tags?.map((t) => {
               return (
                 <h2
                   key={Math.random()}
@@ -146,7 +159,7 @@ export default function ProductViewer() {
                   {t.label}
                 </h2>
               );
-            })}
+            })} */}
           </div>
           <button className="button-alt button left-0" onClick={prevProduct}>
             <Image
@@ -165,10 +178,9 @@ export default function ProductViewer() {
         </div>
         <div className="flex justify-between gap-10 flex-wrap">
           <div className="instrument-primary-tooltip flex flex-col max-w-lg flex-[3]">
-            <h3>24 fret guitar</h3>
+            <h3>{currentProductData?.name}</h3>
             <h5 className="mt-5 text-secondary">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt
+              {currentProductData?.shortDesc}
             </h5>
             <div className="flex items-center mt-10 gap-10">
               <button className="">ORDER NOW</button>
