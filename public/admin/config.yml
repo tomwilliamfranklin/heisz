@@ -4,19 +4,318 @@ backend:
   branch: master # Branch to update (optional; defaults to master)
 media_folder: "public"
 collections:
-  - name: "pages"
-    label: "Pages"
+  - label: "Site settings"
+    name: "site"
+    files:
+      - label: "Config"
+        name: "config"
+        file: "src/content/site/config.json"
+        format: "json"
+        editor:
+          preview: false
+        fields:
+          - { label: "Logo", name: "logo", widget: "image", required: false }
+      - label: "Contact Details"
+        name: "contactDetails"
+        file: "src/content/site/contactDetails.json"
+        format: "json"
+        editor:
+          preview: false
+        fields:
+          - {
+              label: Phone Number,
+              name: phoneNumber,
+              widget: string,
+              hint: "Phone Number in proper format",
+            }
+          - {
+              label: Address,
+              name: address,
+              widget: string,
+              hint: "This is the address of your company.",
+            }
+          - {
+              label: Email,
+              name: email,
+              widget: string,
+              hint: "This is the email of your company.",
+            }
+          - {
+              label: Founding Date,
+              name: foundingDate,
+              widget: Date,
+              hint: "This is the date your company was first founded.",
+            }
+  - name: "products"
+    label: "Products"
+    label_singular: "Product" # Used in the UI, ie: "New Post"
+    folder: "src/content/products"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - { label: "Short Description", name: "shortDesc", widget: "string" }
+      - {
+          label: "PNG Primary Image",
+          name: "cover",
+          widget: "image",
+          hint: "This needs to be a png with transparent background for main screen.",
+        }
+      - {
+          label: "Price",
+          name: "price",
+          widget: "string",
+          hint: "You should include the £ as its an ordinary string",
+        }
+      - label: "Image Gallery"
+        label_singular: "Image for Image Gallery" # Used in the UI, ie: "New Post"
+        name: "imageGallery"
+        widget: "list"
+        hint: "this is the gallery of images that'll show below the product on the front page. "
+        fields:
+          - {
+              label: Image,
+              name: image,
+              widget: "image",
+              default: "Please use an external hosting platform this if possible, file size might be a problem.",
+            }
+          - {
+              label: Caption,
+              name: caption,
+              widget: string,
+              default: "Write something about the image here.",
+            }
+  - label: "Pages"
+    name: "pages"
     files:
       - label: "Home"
         name: "home"
-        file: "content/home.md"
+        file: "src/content/site/home.json"
+        format: "json"
+        editor:
+          preview: false
+        fields:
+          - {
+              label: Slogan Header,
+              name: slogan,
+              widget: string,
+              hint: "when you scroll, this is the first header, the main company slogan",
+            }
+          - {
+              label: Slogan Description,
+              name: sloganDescription,
+              widget: string,
+              hint: "This is used as descriptive text for the slogan.",
+            }
+          - {
+              label: Slogan Image,
+              name: sloganImage,
+              widget: "image",
+              default: "This is the slogan's main company image. Suggest something showing the company logo",
+            }
+          - {
+              label: Our Process Header,
+              name: ourProcessHeader,
+              widget: string,
+              hint: "The process timeline header",
+            }
+          - {
+              label: Our Process Description,
+              name: ourProcessDescription,
+              widget: string,
+              hint: "This is used as descriptive text for the process section.",
+            }
+          - {
+              label: Our Process Start,
+              name: ourProcessStart,
+              widget: string,
+              hint: "string where the start will be ",
+            }
+          - {
+              label: Our Process Finish,
+              name: ourProcessFinish,
+              widget: string,
+              hint: "string where the finish will be ",
+            }
+          - label: "Process Steps"
+            label_singular: "Process Step"
+            name: "processSteps"
+            widget: "list"
+            hint: "Steps for the Process. I recommend like 4-5"
+            fields:
+              - {
+                  label: Image,
+                  name: image,
+                  widget: "image",
+                  default: "Please use an external hosting platform this if possible, file size might be a problem.",
+                }
+              - {
+                  label: Title,
+                  name: stepTitle,
+                  widget: string,
+                  default: "the title of the step",
+                }
+              - {
+                  label: Description,
+                  name: stepDescription,
+                  widget: string,
+                  default: "the description of the step",
+                }
+              - {
+                  label: Step Number Text,
+                  name: stepNumber,
+                  widget: string,
+                  default: "1.",
+                  hint: "make this a bit playful and different on each one by using a different symbol. like .-*/ etc",
+                }
+      - label: "About Page"
+        name: "about"
+        file: "src/content/pages/about.json"
+        format: "json"
+        editor:
+          preview: true
         fields:
           - { label: "Title", name: "title", widget: "string" }
           - { label: "Publish Date", name: "date", widget: "datetime" }
-          - { label: "Body", name: "body", widget: "markdown" }
-          - label: "Cats"
-            name: "cats"
-            widget: list
-            fields:
-              - { label: "Name", name: "name", widget: "string" }
-              - { label: "Description", name: "description", widget: "text" }
+          - {
+              label: "Featured Image",
+              name: "thumbnail",
+              widget: "image",
+              choose_url: true,
+            }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              sanitize_preview: "true",
+              modes: ["rich_text"],
+            }
+      - label: "Privacy Policy"
+        name: "privacyPolicy"
+        file: "src/content/pages/privacyPolicy.json"
+        format: "json"
+        editor:
+          preview: true
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Publish Date", name: "date", widget: "datetime" }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              sanitize_preview: "true",
+              modes: ["rich_text"],
+            }
+      - label: "Services"
+        name: "services"
+        file: "src/content/pages/services.json"
+        format: "json"
+        editor:
+          preview: true
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Publish Date", name: "date", widget: "datetime" }
+          - {
+              label: "Featured Image",
+              name: "thumbnail",
+              widget: "image",
+              choose_url: true,
+            }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              sanitize_preview: true,
+              modes: ["rich_text"],
+            }
+      - label: "Case Studies"
+        name: "caseStudies"
+        file: "src/content/pages/caseStudies.json"
+        format: "json"
+        editor:
+          preview: true
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Publish Date", name: "date", widget: "datetime" }
+          - {
+              label: "Featured Image",
+              name: "thumbnail",
+              widget: "image",
+              choose_url: true,
+            }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              sanitize_preview: true,
+              modes: ["rich_text"],
+            }
+      - label: "Contact Page"
+        name: "contactPage"
+        file: "src/content/pages/contact.json"
+        format: "json"
+        editor:
+          preview: true
+        fields:
+          - { label: "Title", name: "title", widget: "string" }
+          - { label: "Publish Date", name: "date", widget: "datetime" }
+          - {
+              label: "Featured Image",
+              name: "thumbnail",
+              widget: "image",
+              choose_url: true,
+            }
+          - {
+              label: "Body",
+              name: "body",
+              widget: "markdown",
+              sanitize_preview: "true",
+              modes: ["rich_text"],
+            }
+  - name: "coreValues"
+    label: "Core Values"
+    label_singular: "Core Value" # Used in the UI, ie: "New Post"
+    folder: "src/content/coreValues"
+    create: true
+    fields:
+      - { label: "Cover", name: "cover", widget: "image", required: true }
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Description", name: "description", widget: "string" }
+  - name: "socialMedias"
+    label: "Social Medias"
+    label_singular: "Social Media" # Used in the UI, ie: "New Post"
+    folder: "src/content/socialMedias"
+    create: true
+    slug: "{{name}}" # Filename
+    fields:
+      - { label: "Name", name: "name", widget: "string" }
+      - {
+          label: "icon",
+          name: "icon",
+          widget: "image",
+          required: true,
+          hint: "The icon will be set to color white, do not use complex icons. with primary color as background. ",
+        }
+
+      - { label: "url", name: "url", widget: "string" }
+      - {
+          label: "primaryColor",
+          name: "primaryColor",
+          widget: "string",
+          hint: "needs the primary color of the social media. In a HEX value. ",
+        }
+  - name: "clients"
+    label: "Clients"
+    label_singular: "Client" # Used in the UI, ie: "New Post"
+    folder: "src/content/clients"
+    create: true
+    slug: "{{name}}" # Filename
+    fields:
+      - {
+          label: "Client Image",
+          name: "image",
+          widget: "image",
+          choose_url: true,
+          required: true,
+        }
+      - { label: "Name", name: "title", widget: "string" }
