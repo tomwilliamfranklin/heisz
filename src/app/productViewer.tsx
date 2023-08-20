@@ -1,96 +1,51 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import parseMD from "parse-md";
-import { Product } from "@/data/DataTypes";
+import { Product } from "data/DataTypes";
 import Image from "next/image";
 import classNames from "classnames";
 import arrow from "../../public/arrow.svg";
-import matter from "gray-matter";
 
-export default function ProductViewer() {
-  const [products, setProducts] = useState<Product[]>([]);
+import type { InferGetStaticPropsType, GetStaticProps } from "next";
+
+export const getStaticProps: GetStaticProps<{
+  repo: string;
+}> = async () => {
+  const repo = "hello world";
+  return { props: { repo } };
+};
+
+export default function ProductViewer({
+  repo,
+}: InferGetStaticPropsType<typeof getStaticProps>) {
   const [currentProduct, setCurrentProduct] = useState(0);
   const [leftAnimate, setLeftAnimate] = useState(false);
   const [rightAnimate, setRightAnimate] = useState(false);
   const [endLeftAnimate, setEndLeftAnimate] = useState(false);
   const [endRightAnimate, setEndRightAnimate] = useState(false);
 
-  useEffect(() => {
-    const newProducts: Product[] = [];
-
-    const markdownFiles = require.context(
-      "../content/products",
-      false,
-      /\.\/.*md/i
-    );
-
-    const dataPromises: Promise<boolean>[] = [];
-    markdownFiles.keys().forEach((markdownFile) => {
-      const name = markdownFile.split(".", 2)[1] + ".md";
-
-      const markdown = require("../content/products/2023-08-06-the-shrek.md");
-
-      // push each "fetch" of an article to a array of promises. We then listen for when all these promises are finished later, to set them to state.
-      dataPromises.push(
-        fetch(markdown)
-          .then((response) => {
-            // fetch markdown delivers the text of the markdown
-            console.log("E: ", response);
-            return response.text();
-          })
-          .then((text) => {
-            // using parse-md library to split the text from the "metadata" at top of markdown.
-            const { metadata, content } = parseMD(text);
-            console.log(text);
-
-            // push each metadata / content as a single BlogPost object to an array of BlogPosts.
-            newProducts.push({
-              ...(metadata as Product),
-              id: "markdownFile",
-            });
-            return true;
-          })
-          .catch((e) => {
-            // this should never happen... but you know
-            // console.log(e);
-            return false;
-          })
-      );
-
-      Promise.all(dataPromises).then(() => {
-        newProducts.sort((a, b) => {
-          return b.date.getTime() - a.date.getTime();
-        });
-
-        setProducts(newProducts);
-      });
-    });
-  }, []);
-
-  const onAnimateEnd = (e: any) => {
-    if (e.propertyName === "transform") {
-      if (e.currentTarget.className.includes("leftAnimate")) {
-        setLeftAnimate(false);
-        setEndRightAnimate(true);
-        setCurrentProduct(
-          currentProduct === 0 ? products.length - 1 : currentProduct - 1
-        );
-      } else if (e.currentTarget.className.includes("rightAnimate")) {
-        setRightAnimate(false);
-        setEndLeftAnimate(true);
-        setCurrentProduct(
-          currentProduct === products.length - 1 ? 0 : currentProduct + 1
-        );
-      } else if (
-        e.currentTarget.className.includes("endRightAnimate") ||
-        e.currentTarget.className.includes("endLeftAnimate")
-      ) {
-        setEndLeftAnimate(false);
-        setEndRightAnimate(false);
-      }
-    }
-  };
+  // const onAnimateEnd = (e: any) => {
+  //   if (e.propertyName === "transform") {
+  //     if (e.currentTarget.className.includes("leftAnimate")) {
+  //       setLeftAnimate(false);
+  //       setEndRightAnimate(true);
+  //       setCurrentProduct(
+  //         currentProduct === 0 ? products.length - 1 : currentProduct - 1
+  //       );
+  //     } else if (e.currentTarget.className.includes("rightAnimate")) {
+  //       setRightAnimate(false);
+  //       setEndLeftAnimate(true);
+  //       setCurrentProduct(
+  //         currentProduct === products.length - 1 ? 0 : currentProduct + 1
+  //       );
+  //     } else if (
+  //       e.currentTarget.className.includes("endRightAnimate") ||
+  //       e.currentTarget.className.includes("endLeftAnimate")
+  //     ) {
+  //       setEndLeftAnimate(false);
+  //       setEndRightAnimate(false);
+  //     }
+  //   }
+  // };
 
   const prevProduct = () => {
     setLeftAnimate(true);
@@ -108,7 +63,7 @@ export default function ProductViewer() {
   };
 
   useEffect(() => {
-    // scrollToNext();
+    console.log("p: ", repo);
   }, []);
 
   const scrollToNext = () => {
@@ -118,7 +73,7 @@ export default function ProductViewer() {
     }, 10000);
   };
 
-  const currentProductData = products[currentProduct];
+  // const currentProductData = products[currentProduct];
 
   return (
     <div className="relative w-full min-h-full flex flex-col">
@@ -126,7 +81,7 @@ export default function ProductViewer() {
         <div className="relative flex flex-1 items-center justify-center mt-0 mb-20">
           {/* <h1 className="font-Gazzetta instrument-header">Gatekeeper</h1> */}
           <div className="flex flex-col h-fit relative">
-            <Image
+            {/* <Image
               className={classNames("instrument", {
                 leftAnimate,
                 rightAnimate,
@@ -137,8 +92,9 @@ export default function ProductViewer() {
               alt="guitar placeholder"
               width={1536}
               height={726}
-              src={`/product-heros/${currentProductData?.cover}`}
+              src={currentProductData?.cover}
             />
+            {currentProductData?.cover + "HELLO "} */}
             {/* {currentProductData.tags?.map((t) => {
               return (
                 <h2
@@ -180,7 +136,7 @@ export default function ProductViewer() {
           </button>
         </div>
         <div className="flex justify-between gap-10 flex-wrap">
-          <div className="instrument-primary-tooltip flex flex-col max-w-lg flex-[3]">
+          {/* <div className="instrument-primary-tooltip flex flex-col max-w-lg flex-[3]">
             <h3>{currentProductData?.name}</h3>
             <h5 className="mt-5 text-secondary">
               {currentProductData?.shortDesc}
@@ -189,7 +145,7 @@ export default function ProductViewer() {
               <button className="">ORDER NOW</button>
               <h3 className="">£3,500</h3>
             </div>
-          </div>
+          </div> */}
 
           <div className="images flex justify-end gap-[40px] flex-[3] flex-wrap">
             <div className="flex flex-col gap-5 flex-1 uppercase font-bold cutout-back">
@@ -254,20 +210,3 @@ export default function ProductViewer() {
     </div>
   );
 }
-
-// export async function getStaticProps(context) {
-//   // extracting the slug from the context
-//   const { slug } = context.params;
-
-//   // retrieving the Markdown file associated to the slug
-//   // and reading its data
-//   const content = await import(`../../posts/${slug}.md`);
-//   const data = matter(content.default);
-
-//   return {
-//     props: {
-//       frontmatter: data.data,
-//       markdownBody: data.content,
-//     },
-//   };
-// }

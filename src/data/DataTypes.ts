@@ -3,7 +3,7 @@ export type Product = {
   name: string;
   shortDesc: string;
   cover: string;
-  date: Date;
+  releaseDate: Date;
   price: string;
   imageGallery: {
     image: string;

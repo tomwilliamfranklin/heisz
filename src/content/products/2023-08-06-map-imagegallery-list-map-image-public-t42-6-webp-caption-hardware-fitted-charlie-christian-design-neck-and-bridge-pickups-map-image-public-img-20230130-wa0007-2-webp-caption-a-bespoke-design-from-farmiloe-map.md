@@ -4,6 +4,7 @@ shortDesc: "Cumque impedit corrupti molestias voluptatem amet pariatur quo
   laborum. Tempore dolorem voluptatem voluptatem et eaque et in. "
 cover: /public/guitar-placeholder1.webp
 price: "1500"
+releaseDate: 2023-05-03T17:58:24.917Z
 imageGallery:
   - image: /public/img-20230130-wa0007-2-.webp
     caption: Precision and perfection in a guitar

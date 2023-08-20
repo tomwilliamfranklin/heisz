@@ -55,6 +55,7 @@ collections:
     fields:
       - { label: "Name", name: "name", widget: "string" }
       - { label: "Short Description", name: "shortDesc", widget: "string" }
+      - { label: "ReleaseDate", name: "releaseDate", widget: "date" }
       - {
           label: "PNG Primary Image",
           name: "cover",
