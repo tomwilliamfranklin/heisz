@@ -1,12 +1,11 @@
-"use client";
-import ProductViewer from "./productViewer";
 import Image from "next/image";
-import CreationProcessTimeline from "./creationProcessTimeline";
-import Testimonals from "./testimonals";
 import * as HOME from "../content/site/home.json";
-import { createValidImageURL } from "@/data/Utils";
+import CreationProcessTimeline from "components/creationProcessTimeline";
+import ProductViewer from "components/productViewer";
+import Testimonals from "components/testimonals";
+import { createValidImageURL } from "data/Utils";
 
-export default function Home() {
+export default function Page() {
   const home = HOME;
 
   return (
@@ -18,13 +17,15 @@ export default function Home() {
         </section>
         <section className="section-1 bg-primary flex ml-auto mr-auto items-center flex-wrap p-5 gap-10">
           <div className="overflow-hidden h-full flex-1 cutout-back basis-[500px]">
-            <Image
-              className="cutout-4 object-cover"
-              alt={home.slogan}
-              width={1920}
-              height={1080}
-              src={createValidImageURL(home.sloganImage)}
-            />
+            {home.sloganImage && (
+              <Image
+                className="cutout-4 object-cover"
+                alt={home.slogan}
+                width={1920}
+                height={1080}
+                src={createValidImageURL(home.sloganImage)}
+              />
+            )}
           </div>
           <div className="flex flex-1 justify-center cutout-back basis-[800px] max-w-full">
             <div className="text-box cutout-3 lg:max-w-[800px] bg-whiteColor text-blackColor">

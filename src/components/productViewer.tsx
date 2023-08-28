@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useState } from "react";
 import parseMD from "parse-md";
 import { Product } from "data/DataTypes";
@@ -7,16 +9,7 @@ import arrow from "../../public/arrow.svg";
 
 import type { InferGetStaticPropsType, GetStaticProps } from "next";
 
-export const getStaticProps: GetStaticProps<{
-  repo: string;
-}> = async () => {
-  const repo = "hello world";
-  return { props: { repo } };
-};
-
-export default function ProductViewer({
-  repo,
-}: InferGetStaticPropsType<typeof getStaticProps>) {
+export const ProductViewer = () => {
   const [currentProduct, setCurrentProduct] = useState(0);
   const [leftAnimate, setLeftAnimate] = useState(false);
   const [rightAnimate, setRightAnimate] = useState(false);
@@ -61,10 +54,6 @@ export default function ProductViewer({
     //   currentProduct === products.length - 1 ? 0 : currentProduct + 1
     // );
   };
-
-  useEffect(() => {
-    console.log("p: ", repo);
-  }, []);
 
   const scrollToNext = () => {
     setTimeout(() => {
@@ -209,4 +198,6 @@ export default function ProductViewer({
       </div>
     </div>
   );
-}
+};
+
+export default ProductViewer;

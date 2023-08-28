@@ -28,12 +28,19 @@ export function isValidURL(string: string) {
 export function createValidImageURL(src: string | undefined): string {
   let source = src;
 
-  if (src && !isValidURL(src)) {
-    if (src.includes("public/")) {
-      source = src.replace("public/", "");
+  if (clientRendering()) {
+    if (src && !isValidURL(src)) {
+      if (src.includes("public/")) {
+        source = src.replace("public/", "");
+      }
+      source = window?.location.origin + source;
     }
-    source = window.location.origin + source;
-  }
 
-  return source || "";
+    return source || "";
+  } else return "";
+}
+
+// Next.js tries running client only code on server, so this will be a easy check to stop it.
+export function clientRendering(): boolean {
+  return typeof window !== "undefined";
 }

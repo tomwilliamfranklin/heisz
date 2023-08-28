@@ -1,6 +1,17 @@
+import { GetStaticProps } from "next";
 import React from "react";
 
-export default function Contact() {
+export const getStaticProps: GetStaticProps = async (context) => {
+  return {
+    props: {
+      repo: "hello world",
+    },
+  };
+};
+
+function Contact(props: any) {
+  console.log("ew", props.repo);
+
   return (
     <div className="min-h-[100vh] pt-[150px] lg:pt-[0px] pb-[150px]">
       {" "}
@@ -70,3 +81,5 @@ export default function Contact() {
     </div>
   );
 }
+
+export default Contact;
